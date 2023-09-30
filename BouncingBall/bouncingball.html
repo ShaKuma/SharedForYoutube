@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width:100vw;
+                height: 100vh;
+                overflow:hidden;
+            }
+            .circle{
+                width:100px;
+                height:100px;
+                background: orangered;
+                border-radius: 50%;
+                position:relative;
+                animation:bouncy 1s cubic-bezier(0.5, 0.05, 1 ,0.5);
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+                z-index: 1;
+            }
+            .floor{
+                height: 1px;
+                width: 1px;
+                background: white;
+                transform: rotateX(67deg) rotateZ(45deg) translate(92px, 10px);
+                animation:shadow 1s ease-in-out;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+            }
+            @keyframes bouncy {
+                0%{
+                    transform: translateY(-150%);
+                    scale: 1 1.1;
+                }
+                100%{
+                    transform:translateY(50%);
+                    scale: 1.1 1;
+                }
+            }
+            @keyframes shadow{
+                to{
+                    box-shadow: 20px 31px 48px 19px rgba(0,0,0,0.8);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="circle"></div>
+            <div class="floor"></div>
+        </div>
+    </body>
+</html>
